@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alexa Lagunas</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>   
+   
+    <style>
+    div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+    
+    /* Style the buttons inside the tab */
+    div.tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+    
+    /* Change background color of buttons on hover */
+    div.tab button:hover {
+        background-color: #ddd;
+    }
+    
+    /* Create an active/current tablink class */
+    div.tab .active {
+        background-color: #ccc;
+    }
+    
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+     
+
+    
+        #mainContent{
+            font-family:Georgia;            
+            text-align:center;
+        }
+          
+        .subtitle-text{
+            font-family:Georgia;
+            text-align: center;            
+        }
+        .interests{
+            font-family:Georgia;
+            text-align: left;            
+        }
+        .profile-pic{
+            margin-top: 30px;
+            margin-left:20px;
+            height:400px;
+            width:350px;
+            border-width: 10px;
+            border-style: solid;
+            margin:10px;
+
+            
+        }
+        .subtitle{
+            font-family:Georgia;          
+            text-align: left;            
+        }
+        .mexico-image{
+
+            height:250px;
+            width:300px;
+            border-width: 10px;
+            border-style: solid; 
+            margin-bottom:10px;        
+
+            
+        }   
+        .bike-image{
+
+            height:300px;
+            width:300px;
+            border-width: 10px;
+            border-style: solid;   
+            margin-bottom:10px;             
+
+            
+        } 
+        .robot-image{
+
+            height:300px;
+            width:300px;
+            border-width: 10px;
+            border-style: solid;
+            margin-bottom:10px;             
+
+            
+        } 
+        .airplane-image{
+
+            height:300px;
+            width:300px;
+            border-width: 10px;
+            border-style: solid;
+            margin-bottom:10px;             
+
+            
+        }           
+    
+        .family-image{
+
+            height:250px;
+            width:300px;
+            border-width: 10px;
+            border-style: solid; 
+            margin-bottom:10px;        
+
+            
+        }   
+        .sammy-image{
+
+            height:250px;
+            width:300px;
+            border-width: 10px;
+            border-style: solid; 
+            margin-bottom:10px;        
+
+            
+        }    
+        
+        .panel, .flip {
+        padding: 5px;
+        text-align: center;
+        background-color: #666699;
+        border: solid 5px #cccccc;
+        font-family:Georgia; 
+        color:#cccccc;
+        }
+
+        .panel {
+        padding: 50px;
+        display: none;
+        }  
+        
+        .about-me{
+        background:#003366;
+        height:30px;
+        width:200px;
+        color:#ffffff;
+        font-family:Georgia;
+
+        }
+        
+        .background{
+        background:#003366;
+        height:30px;
+        width:200px;
+        color:#ffffff;
+        font-family:Georgia;
+
+        }        
+    
+    </style>
+    
+    <!-- Makes "Background" largers-->
+    <script> 
+    $(document).ready(function(){
+       $(".background").click(function(){
+           $(".background").animate({
+               left: '10px',
+               height: '+=20px',
+               width: '+=20px',
+               fontSize: '3em'
+            
+           });  
+           $(".background").animate({
+               left: '10px',
+               height: '-=20px',
+               width: '-=20px',
+               fontSize: '1em'
+            
+           });             
+           
+        });
+      });
+    </script>
+    
+    <!-- animates "About Me"-->
+    <script> 
+    $(document).ready(function(){
+       $(".about-me").click(function(){
+           $(".about-me").animate({
+               left: '10px',
+               height: '+=20px',
+               width: '+=20px',
+               fontSize: '3em'
+            
+           });  
+           $(".about-me").animate({
+               left: '10px',
+               height: '-=20px',
+               width: '-=20px',
+               fontSize: '1em'
+            
+           });             
+           
+        });
+      });
+    </script>    
+</head>
+<body style = background-color:#e6e6e6>
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      <a class="navbar-brand" href="#">About Me</a>
+        </div>
+        <ul class="nav navbar-nav">
+        <li class="active"><a href="about-me.1.html">Home</a></li>
+        <li><a href="biking.1.html">Biking</a></li>
+        <li><a href="robotics.1.html">Robotics</a></li>
+        <li><a href="traveling.1.html">Traveling</a></li>
+        </ul>
+    </div>
+    </nav>
+    
+
+ 
+ 
+
+    <div id=mainContent class="w3-panel w3-dark-grey">
+    <h1>Alexa Lagunas
+    </h1>
+    </div>
+    
+    
+    
+
+    <div class="subtitle about-me">
+      <h3>About Me</h3>
+    </div>  
+      
+    <div>  
+      <a href="#" title="About Me" data-toggle="popover" data-trigger="focus" data-content="Welcome to my page! Here I will talk a little about myself and my background.">Description</a>
+    </div>
+
+    <script>
+      $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();   
+        });
+    </script>
+    
+
+    
+    <div class="subtitle-text">    
+
+    
+    <img   class="profile-pic" src="profile.1.JPG" alt="Profile picture" >   
+    
+  
+    
+    <div class="container" >
+     
+      <!-- Trigger the modal with a button -->
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style= "margin-bottom:10px;">Name & Info</button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog" >
+        <div class="modal-dialog">
+    
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Name & Info</h4>
+            </div>
+            
+            <!-- TYPOGRAPHY-->
+            <div class="modal-body" class="text-info">
+              <p>My full name is Alexa Mia Lagunas, I am 16 years old, and I was born in Chicago, Illinois. </p>
+           </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+     
+    
+    <div class="container" style= "margin-bottom:20px;">
+        
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+           <center> <img src="mexico.1.png" alt="Mexico" style="width:50%;"></center>
+          </div>
+
+          <div class="item">
+            <center><img src="family.1.JPG" alt="Family" style="width:50%;"></center>
+          </div>
+    
+          <div class="item">
+            <center><img src="sammy.1.jpg" alt="Dog" style="width:50%;"></center>
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+      
+        
+ 
+    
+    <div class="background">
+      <h3>Background</h3>
+    </div>  
+    
+    <div>
+      <div class="well">Both of my parents were born and raised in Guerrero, Mexico. They moved to the United States in their 20's, where they got married. I have one brother named Remy who is a freshman here at Lane. We also have a dog named Sammy, who is 6 years old ans is half maltese and half shitzu.</div>
+    </div>
+
+    
+    </div>
+    
+   <div class="container subtitle">
+      <h3>My Interests</h3>
+      <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="focus" data-content="These are only a few of my interests! Aside from these, I also enjoy reading, going to the beach, listening to music, and computer science.">Description</a>
+    </div>
+
+    <script>
+      $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();   
+        });
+    </script>
+    
+    <!--GRID SYSTEM  -->  
+    <div class="container">
+      
+
+          <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-1 col-md-4" >
+                <center><img   class="bike-image" src="bike.1.jpeg" alt="Biking" ></center>
+                
+            </div>
+            <div class="col-sm-1 col-md-4" >
+                <center><img   class="robot-image" src="robot.1.png" alt="family" ></center>
+            </div>
+            <div class="col-sm-1 col-md-4" >
+                <center><img   class="airplane-image" src="airplane.1.jpeg" alt="sammy" ></center>
+            </div>    
+          </div>
+    </div>
+    
+    <!--
+      <div class="list-group">
+        <a href="#" class="list-group-item">
+          <h4 class="list-group-item-heading">Biking</h4>
+          <p class="list-group-item-text">Biking is one of my favorite hobbies and ways to pass the time.
+          I learned to bike at  a young age, but I after I outgrew my first bike, 
+          I usually borrowed other people's bikes because I didn't have the means to buy one myself.
+          It wasn't until this past summer when I saved up enough money to buy my very own bike, and I used it 
+          very often during the summer. </p>
+        </a>
+        <a href="#" class="list-group-item">
+          <h4 class="list-group-item-heading">Robotics</h4>
+          <p class="list-group-item-text">Being on the 
+          robotics team has been a verybig part of my life after I joined
+          Lane Tech's all-girls robotics team last year. I joined the team 
+          after my ECS teacher, mr.Law,  who is also the coach, enouraged me 
+          to join the team. I was a little hesitant to join at first, but it I
+          believe I made the right choice. </p> 
+        </a>
+        <a href="#" class="list-group-item">
+          <h4 class="list-group-item-heading">Traveling</h4>
+          <p class="list-group-item-text">My family is very big on
+          traveling. At least once a year, my family makes an effort to take a 
+          trip somewhere out of state and preferably out of the country. I really
+          enjoy going to new places and learning about different cultures. Places 
+          I have been to include Mexico, the Dominican Republic, Ireland, and Italy.
+          </p> 
+        </a>
+      </div>
+    </div>
+    
+    -->
+    
+    <script> 
+    $(document).ready(function(){
+    $("#flip1").click(function(){
+        $("#panel1").slideToggle("slow");
+    });
+    });
+    </script>
+     
+    <div id="flip1" class="flip">Biking</div>
+    <div id="panel1" class="panel">Biking is one of my favorite hobbies and ways to pass the time.
+          I learned to bike at  a young age, but I after I outgrew my first bike, 
+          I usually borrowed other people's bikes because I didn't have the means to buy one myself.
+          It wasn't until this past summer when I saved up enough money to buy my very own bike, and I used it 
+          very often during the summer. </div>
+  
+  
+    <script> 
+    $(document).ready(function(){
+    $("#flip2").click(function(){
+        $("#panel2").slideToggle("slow");
+    });
+    });
+    </script>
+     
+    <div id="flip2" class="flip">Robotics</div>
+    <div id="panel2" class="panel">Being on the 
+          robotics team has been a verybig part of my life after I joined
+          Lane Tech's all-girls robotics team last year. I joined the team 
+          after my ECS teacher, mr.Law,  who is also the coach, enouraged me 
+          to join the team. I was a little hesitant to join at first, but it I
+          believe I made the right choice.  </div>  
+          
+          
+    <script> 
+    $(document).ready(function(){
+    $("#flip3").click(function(){
+        $("#panel3").slideToggle("slow");
+    });
+    });
+    </script>
+     
+    <div id="flip3" class="flip">Traveling</div>
+    <div id="panel3" class="panel">My family is very big on
+          traveling. At least once a year, my family makes an effort to take a 
+          trip somewhere out of state and preferably out of the country. I really
+          enjoy going to new places and learning about different cultures. Places 
+          I have been to include Mexico, the Dominican Republic, Ireland, and Italy.</div>            
+    
+
+     
+         
+       
+        
+         
+   
+        
+    
+</body>
+</html> 

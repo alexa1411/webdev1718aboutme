@@ -1,0 +1,51 @@
+
+
+<DOCTYPE data-cloud9-id='5' html>
+
+    <html data-cloud9-id='1'>
+    
+    <head data-cloud9-id='2'>
+        <script data-cloud9-id='6' src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+                <script data-cloud9-id='7'>
+            $(document).ready(function() {
+                $("button").click(function() {
+                    //console.log("clicked");
+                    $.ajax({
+                        url: "https://data.cityofchicago.org/views/INLINE/rows.json?accessType=WEBSITE&method=clustered2&min_lon=-179.999999&max_lon=179.999999&min_lat=-85.051128&max_lat=85.051128&target_node_clusters=250&min_distance_between_clusters=9.652713139974779",
+                        success: function(result) {
+                            console.log(result);
+                            var output = "";
+                            
+                            
+                         
+                            //$("#results").html(output);
+                        }
+                    })
+                });
+            });
+        </script>
+       
+        
+        <style data-cloud9-id='8'>
+            .output{
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body data-cloud9-id='3'>
+
+        <div data-cloud9-id='9' id="div1">
+            <h2 data-cloud9-id='10'>jQuery and APIs</h2>
+        </div>
+
+        <button data-cloud9-id='11'>Events</button>
+        
+        <div data-cloud9-id='12' id="results">
+            
+        </div>
+    </body>
+
+    </html>
+<script src="/_static/preview/livecss.js"></script>
