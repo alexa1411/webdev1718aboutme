@@ -1,5 +1,43 @@
 <!DOCTYPE html>
 <html>
+  <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+            <script>
+            $(document).ready(function() {
+                $("button").click(function() {
+                    //console.log("clicked");
+                    $.ajax({
+                        url: "https://data.cityofchicago.org/views/INLINE/rows.json?accessType=WEBSITE&method=clustered2&min_lon=-179.999999&max_lon=179.999999&min_lat=-85.051128&max_lat=85.051128&target_node_clusters=250&min_distance_between_clusters=9.652713139974779",
+                        success: function(result) {
+                            console.log(result);
+                            var output = "";
+                            
+                            $.each(result, function(index, value){
+                                //console.log(index + " " + value);
+                                
+                                // output += "<div class='output'>" + value.building_street + " " + value.original_lse_report_approved + "</div>";
+                                
+                                function myMap() {
+                                  var mapOptions1 = {
+                                    center: new google.maps.LatLng(51.508742,-0.120850),
+                                    zoom:0,
+                                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                                  };
+                                
+                                  var map1=new google.maps.Map(document.getElementById("googleMap1"),mapOptions1);
+                                }
+                                
+                            
+                            
+                            });
+                            //$("#results").html(output);
+                        }
+                    })
+                });
+            });
+        </script>
+  </head>
 <body>
 
 <h1>My First Google Map</h1>
@@ -9,17 +47,7 @@
 <div id="googleMap1" style="width:400px;height:300px;"></div>
 <br>
 <br>
-<script>
-function myMap() {
-  var mapOptions1 = {
-    center: new google.maps.LatLng(51.508742,-0.120850),
-    zoom:0,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
 
-var map1=new google.maps.Map(document.getElementById("googleMap1"),mapOptions1);
-}
-</script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD63AohysB6WO1acMQqvRR7xcS_8K6U5B8&callback=myMap"></script>
 <!--
