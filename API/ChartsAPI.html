@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>       
+    <script>
+    $(document).ready(function() {
+  
+        $.ajax({
+            url: "https://data.cityofchicago.org/resource/psqp-6rmg.json",
+            success: function(result) {
+                console.log(result);
+                var count = 0;
+                var name = "";
+        
+                
+                $.each(function(index, value){
+                    $("#results").append
+                    
+                    
+                    
+        
+
+        
+                    
+                    
+                });
+          
+            }
+        });
+    });
+    </script>      
+
+</head>    
+    
+<body>
+
+<h1>311 Abandoned Vehicle Requests</h1>
+
+<div id="piechart"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+
+
+</body>
+</html>

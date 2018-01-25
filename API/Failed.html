@@ -33,16 +33,20 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
         </script>
             <script>
-            $(document).ready(function() {
-                $("button").click(function() {
+            $(document).ready(function() 
+            {
+
                     //console.log("clicked");
-                    $.ajax({
+                    $.ajax
+                    ({
                         url: "https://data.cityofchicago.org/resource/psqp-6rmg.json",
-                        success: function(result) {
+                        success: function(result) 
+                        {
                             console.log(result);
                             var output = "";
                             
-                            $.each(result, function(index, value){
+                            $.each(result, function(index, value)
+                            {
                                 //console.log(index + " " + value);
                                 
                                 // output += "<div class='output'>" + value.building_street + " " + value.original_lse_report_approved + "</div>";
@@ -58,7 +62,7 @@
                             //$("#results").html(output);
                         }
                     })
-                });
+                
             });
         </script>
        

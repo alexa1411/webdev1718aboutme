@@ -37,18 +37,158 @@
         // Note: The code uses the JavaScript Array.prototype.map() method to
         // create an array of markers based on a given "locations" array.
         // The map() method here has nothing to do with the Google Maps API.
-        var markers = locations.map(function(location, i) {
+          var markers = locations.map(function(location, i) {
           return new google.maps.Marker({
             position: location,
             label: labels[i % labels.length]
           });
         });
+        
+        //rogers park
+        /*var infowindow1 = new google.maps.InfoWindow({
+          content: "Rogers Park Branch"
+        });
+        var marker1 = new google.maps.Marker({
+          position: {lat: 42.00670763656976, lng: -87.67340767268539},
+          map: map,
+          title: 'Rogers Park'
+        });
+        marker1.addListener('click', function() {
+          infowindow1.open(map, marker1);
+        });
+        
+        //northtown
+        var infowindow2 = new google.maps.InfoWindow({
+          content: "Northtown Branch"
+        });
+        var marker2 = new google.maps.Marker({
+          position: {lat: 41.99833902904292, lng: -87.6996500514452},
+          map: map,
+          title: 'Northtown'
+        });
+        marker2.addListener('click', function() {
+          infowindow2.open(map, marker2);
+        });
+        
+        //edgebrook
+        var infowindow3 = new google.maps.InfoWindow({
+          content: "Edgebrook Branch"
+        });
+        var marker3 = new google.maps.Marker({
+          position: {lat: 41.9969708834685, lng: -87.7620478920105},
+          map: map,
+          title: 'Edgebrook'
+        });
+        marker3.addListener('click', function() {
+          infowindow3.open(map, marker3);
+        });   
 
-        // Add a marker clusterer to manage the markers.
-        var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-      }
-      var locations = [
+
+        //roden
+        var infowindow4 = new google.maps.InfoWindow({
+          content: "Roden Branch"
+        });
+        var marker4 = new google.maps.Marker({
+          position: {lat: 41.99191752494232, lng: -87.79830189864583},
+          map: map,
+          title: 'Roden'
+        });
+        marker4.addListener('click', function() {
+          infowindow4.open(map, marker4);
+        });
+        
+        //Oriole
+        var infowindow5 = new google.maps.InfoWindow({
+          content: "Oriole Park Branch"
+        });
+        var marker5 = new google.maps.Marker({
+          position: {lat: 41.977961140156296, lng: -87.8132091093451},
+          map: map,
+          title: 'Oriole'
+        });
+        marker5.addListener('click', function() {
+          infowindow5.open(map, marker5);
+        });
+        
+        //edgewater
+        var infowindow6 = new google.maps.InfoWindow({
+          content: "Edgewater Branch"
+        });
+        var marker6 = new google.maps.Marker({
+          position: {lat: 41.977961140156296, lng: -87.8132091093451},
+          map: map,
+          title: 'Edgewater'
+        });
+        marker6.addListener('click', function() {
+          infowindow6.open(map, marker6);
+        }); 
+        
+        //budlong
+        var infowindow7 = new google.maps.InfoWindow({
+          content: "Budlong Woods Branch"
+        });
+        var marker7 = new google.maps.Marker({
+          position: {lat: 41.977961140156296, lng: -87.8132091093451},
+          map: map,
+          title: 'Budlong'
+        });
+        marker7.addListener('click', function() {
+          infowindow7.open(map, marker7);
+        });   
+        
+        //albany
+        var infowindow8 = new google.maps.InfoWindow({
+          content: "Albany Park Branch"
+        });
+        var marker8 = new google.maps.Marker({
+          position: {lat: 41.977961140156296, lng: -87.8132091093451},
+          map: map,
+          title: 'Albany'
+        });
+        marker8.addListener('click', function() {
+          infowindow8.open(map, marker8);
+        });  
+        
+        
+        //mayfair
+        var infowindow9 = new google.maps.InfoWindow({
+          content: "Mayfair Branch"
+        });
+        var marker9 = new google.maps.Marker({
+          position: {lat: 41.977961140156296, lng: -87.8132091093451},
+          map: map,
+          title: 'Mayfair'
+        });
+        marker9.addListener('click', function() {
+          infowindow9.open(map, marker9);
+        });
+        
+        //jefferson
+        var infowindow9 = new google.maps.InfoWindow({
+          content: "Jefferson Park Branch"
+        });
+        var marker9 = new google.maps.Marker({
+          position: {lat: 41.977961140156296, lng: -87.8132091093451},
+          map: map,
+          title: 'Jefferson'
+        });
+        marker9.addListener('click', function() {
+          infowindow9.open(map, marker9);
+        }); */       
+        
+        
+                
+        
+        
+        
+        
+        
+
+      // Add a marker clusterer to manage the markers.
+     var markerCluster = new MarkerClusterer(map, markers,
+     {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+     }
+        var locations = [
         {lat: 42.00670763656976, lng: -87.67340767268539},
         {lat: 41.99833902904292, lng: -87.6996500514452},
         {lat: 41.9969708834685, lng: -87.7620478920105},

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<canvas id="myCanvas" width="400" height="400"
+style="border:1px solid #c3c3c3; background: #4286f4;">
+</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+// Create gradient
+var grd = ctx.createRadialGradient(200,200,50,200,200,200);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"blue");
+
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(00,00,400,400);
+</script>
+
+<script>
+    var canvas = document.querySelector("#myCanvas");
+    var mainContext = canvas.getContext("2d");
+    mainContext.moveTo(50, 250);
+    mainContext.bezierCurveTo(200, -50, 150, 100, 200, 250);
+   
+    //context.arc(62, 250, 10, 0, 2 * Math.PI, true);
+    
+        
+    mainContext.lineWidth = 16;
+    mainContext.strokeStyle = "#FFCC00";
+    mainContext.fillStyle = "#FFCC00";    
+    mainContext.stroke()
+    
+    
+</script>
+
+<script>
+
+    var canvas = document.querySelector("#myCanvas");
+    var mainContext = canvas.getContext("2d");
+    mainContext.beginPath();
+    mainContext.arc(62, 250, 10, 0, 2 * Math.PI, true);
+    
+    mainContext.moveTo(70, 250);
+    mainContext.lineTo(150,80);
+    
+    mainContext.moveTo(150,80);
+    mainContext.lineTo(182, 252);
+    mainContext.closePath();
+    
+ 
+    mainContext.fill();
+    mainContext.lineWidth = 20;
+    mainContext.stroke();
+    
+    mainContext.beginPath();
+    mainContext.arc(190,255,10,0, 2*Math.PI, true);
+    
+    mainContext.fill();
+    mainContext.lineWidth = 20;
+    mainContext.stroke();   
+    mainContext.closePath();
+    
+    mainContext.beginPath();
+    mainContext.fillStyle = "#FFCC00";
+    mainContext.fillRect(90, 170, 90, 30);
+    mainContext.closePath();
+
+
+</script>
+
+<script>
+    var canvas = document.querySelector("#myCanvas");
+    var mainContext = canvas.getContext("2d");
+    mainContext.beginPath();
+    mainContext.moveTo(250,80);
+    mainContext.bezierCurveTo(250, 300, 250, 250, 380, 250);
+
+    
+
+    
+    mainContext.lineWidth = 16;
+    mainContext.strokeStyle = "#FFCC00";
+    mainContext.fillStyle = "#FFCC00";    
+    mainContext.stroke()
+    
+    
+</script>
+
+<script>
+    var canvas = document.querySelector("#myCanvas");
+    var mainContext = canvas.getContext("2d");
+    mainContext.beginPath();
+    mainContext.moveTo(270,80);
+    mainContext.bezierCurveTo(250, 260, 230, 260, 380, 260);
+    //mainContext.closePath();
+    
+    mainContext.lineWidth = 21;
+    mainContext.strokeStyle = "#FFCC00";
+    mainContext.fillStyle = "#FFCC00";    
+    mainContext.stroke()    
+</script>
+    
+<script>
+
+    var canvas = document.querySelector("#myCanvas");
+    var mainContext = canvas.getContext("2d");
+    mainContext.beginPath();
+    mainContext.arc(261,86 ,9,0, 2*Math.PI, true);
+    mainContext.closePath();
+    
+    mainContext.lineWidth = 21;
+    mainContext.strokeStyle = "#FFCC00";
+    mainContext.fillStyle = "#FFCC00";    
+    mainContext.stroke()     
+    
+    mainContext.beginPath();
+    mainContext.arc(373,256 ,4.5,0, 2*Math.PI, true);    
+    mainContext.closePath();
+    
+    
+    mainContext.lineWidth = 21;
+    mainContext.strokeStyle = "#FFCC00";
+    mainContext.fillStyle = "#FFCC00";
+    mainContext.fill();
+    mainContext.stroke()     
+    
+</script>
+
+
+
+
+</body>
+</html>
