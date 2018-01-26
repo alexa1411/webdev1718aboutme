@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
 <body>
-<!--<svg height="1000" width="1000">
-<path d="M 0 100 q 25 50 75 0" stroke="blue" stroke-width="2" fill="none" />
-<path d="M 75 100 q 20 50 75 0" stroke="blue" stroke-width="2" fill="none" /> 
-<path d="M 150 100 q 25 50 75 0" stroke="blue" stroke-width="2" fill="none" />  
-<path d="M 225 100 q 25 50 75 0" stroke="blue" stroke-width="2" fill="none" />
-<path d="M 300 100 q 25 50 75 0" stroke="blue" stroke-width="2" fill="none" />
-<path d="M 375 100 q 25 50 75 0" stroke="blue" stroke-width="2" fill="none" />
-<path d="M 450 100 q 25 50 75 0" stroke="blue" stroke-width="2" fill="none" />
-<path d="M 525 100 q 25 50 75 0" stroke="blue" stroke-width="2" fill="none" />
-<path d="M 600 100 q 25 50 75 0" stroke="blue" stroke-width="2" fill="none" />
-<path d="M 675 100 q 25 50 75 0" stroke="blue" stroke-width="2" fill="none" />
 
-<ellipse cx="300" cy="200" rx="50" ry="25" style="fill:orange;stroke-width:2" />
-     
-<path d="M230 180 L230 220 L300 200 Z" style="fill:orange"/>
+<canvas id="myCanvas" width="500" height="500"
+style="border:1px solid #c3c3c3; background: #4286f4;">
+</canvas>
 
-</svg> -->
-
-
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var wave = canvas.getContext("2d");
+    wave.beginPath();
+    wave.moveTo(0, 100);
+    
+    wave.bezierCurveTo(0, 100, 100, 200, 300, 300);
+    wave.closePath();
+    
+    wave.lineWidth = 9;
+    wave.strokeStyle = "#FFCC00";
+    wave.fillStyle = "#FFCC00";    
+    wave.stroke()
+    
+    
+    
+</script>
 
 
 
