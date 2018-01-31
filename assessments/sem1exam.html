@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+         
+         
+  
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+            <script>
+            $(document).ready(function() 
+            {
+                    $.ajax
+                    ({
+                        url: "https://data.cityofchicago.org/resource/tt4n-kn4t.json",
+                        success: function(result) 
+                        {
+                            console.log(result);
+                            var output = "";
+                            
+                            $.each(result, function(index, value)
+                            {
+                                
+                                $("#results").append("<div><h1>" + value.department + "</h1>" +
+                                    "<p><h2>Job titles:</h2> " + value.job_titles + "<br>" +
+                                    "<h2>annual salaries:</h2> " + value.annua_salary + 
+                                    
+                                    "</p>" +
+                                    "</div>"); 
+                            
+                            });
+                        }
+                    })
+                
+            });
+        </script>
+      <style>
+            .favorite-novel{
+               
+                float: right;
+            }
+            
+            body{
+                background-color:#00bcd4;
+            }
+            
+            .card{
+                background:#ccefff;
+            }
+            
+            .card-img-top{
+      
+                height:300px;
+                width:300px;
+                padding:20px;
+                
+            }
+            
+            .card-text{
+                padding:10px;
+            }
+
+            
+            .button{
+                padding: 10px;
+            }
+            
+
+
+             
+                
+        </style>
+         
+        
+    </head>
+    <body>
+        <h1 style = "text-align: center; background: ;"> <u>Alexa Lagunas</u></h1>
+        
+        <h3 style = "text-align: center;"> <u>Period 1</u></h3>
+        
+        <hr>
+        
+        <p style= "padding: 20px">
+        <img src="favorite_novel.jpg" alt="novel" style="float:left; height:250px; width: 200px">
+        </p>
+        
+        <p>
+        Harry Potter and the Deathly Hallows is the last book in the Harry Potter series in
+        which Without the guidance and protection of their professors, Harry (Daniel Radcliffe), 
+        Ron (Rupert Grint) and Hermione (Emma Watson) begin a mission to destroy the Horcruxes, 
+        the sources of Voldemort's immortality. Though they must rely on one another more than ever, 
+        dark forces threaten to tear them apart. Voldemort's Death Eaters have seized control of the
+        Ministry of Magic and Hogwarts, and they are searching for Harry -- even as he and his friends
+        prepare for the ultimate showdown. 
+        </p>
+        
+       
+        
+        <br>
+        <button><a href="https://alexa1411.github.io/webdev1718aboutme/about-me.html">About Me</a></button> 
+        <br>
+        <br>
+        <br>
+        
+        <div class="card" style="width: 40rem; height: 60rem;">
+        <center><img class="card-img-top" src="stevejobs.jpg" alt="Card image cap"></center>
+        <div class="card-block">
+        <h4 class="card-title">Steve Jobs</h4>
+        <p class="card-text">Steven Jobs was
+        an American entrepreneur, business magnate, inventor, and industrial designer. He was the 
+        chairman, chief executive officer (CEO), and co-founder of Apple Inc.; CEO and majority 
+        shareholder of Pixar; a member of The Walt Disney Company's board of directors 
+        following its acquisition of Pixar; and the founder, chairman, and CEO of NeXT. Jobs
+        and Apple co-founder Steve Wozniak are widely recognized as pioneers of the microcomputer
+        revolution of the 1970s and 1980s.</p>
+        <div class= "button"><a href="https://en.wikipedia.org/wiki/Steve_Jobs" class="btn btn-primary">More</a></div>
+        </div>
+        
+        </div>
+
+
+        
+        
+    <div id="demo" class="carousel slide" data-ride="carousel">
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+      </ul>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="apollo.jpg" alt="apollo" width="1100" height="500">
+          <div class="carousel-caption">
+            <h3>Apollo</h3>
+            <p>members from Apollo 11 on the moon</p>
+          </div>   
+        </div>
+        <div class="carousel-item">
+          <img src="icecream.jpg" alt="icecream" width="1100" height="500">
+          <div class="carousel-caption">
+            <h3>Mocha Ice Cream</h3>
+            <p>Mocha is my favorite flavor of ice cream</p>
+          </div>   
+        </div>
+        <div class="carousel-item">
+          <img src="redpanda.jpg" alt="redpanda" width="1100" height="500">
+          <div class="carousel-caption">
+            <h3>Red Panda</h3>
+            <p>Red pandas are native to the eastern Himalayas and southwestern China.</p>
+          </div>   
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>   
+    
+    <br>
+    <hr>
+    <br>
+    
+ 
+       
+        
+    <div id="div1">
+        <h1 style="text-align:center">Title</h1>
+    </div>
+
+    <div id="results"></div>
+    </body>
+</html>
+<script src="/_static/preview/livecss.js"></script>
+
