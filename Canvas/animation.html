@@ -71,16 +71,15 @@ function earth()
     mainContext.fill();
 }
  
-function drawStars(starx, stary, stara) {
+function drawStars(starx, stary, a) {
   
       //creates lines that shape stars
-
       mainContext.beginPath();
       mainContext.moveTo(starx + 15, stary); //75, 45
       mainContext.lineTo(starx - 15, stary);
       mainContext.closePath();
       mainContext.lineWidth = 3;
-      mainContext.strokeStyle ="rgba(255, 255, 77," + stara +")";
+      mainContext.strokeStyle ="rgba(255, 255, 77," + a +")";
       mainContext.stroke();       
       
       mainContext.beginPath();
@@ -88,7 +87,7 @@ function drawStars(starx, stary, stara) {
       mainContext.lineTo(starx, stary+15);
       mainContext.closePath();      
       mainContext.lineWidth = 3;
-      mainContext.strokeStyle = "rgba(255, 255, 77," +stara +")";
+      mainContext.strokeStyle = "rgba(255, 255, 77," + a +")";
       mainContext.stroke();    
       
       mainContext.beginPath();
@@ -96,7 +95,7 @@ function drawStars(starx, stary, stara) {
       mainContext.lineTo(starx-10, stary+10);
       mainContext.closePath();      
       mainContext.lineWidth = 3;
-      mainContext.strokeStyle = "rgba(255, 255, 77, " +stara +")";
+      mainContext.strokeStyle = "rgba(255, 255, 77, " + a +")";
       mainContext.stroke(); 
       
       mainContext.beginPath();
@@ -104,21 +103,8 @@ function drawStars(starx, stary, stara) {
       mainContext.lineTo(starx+10, stary+10);
       mainContext.closePath();      
       mainContext.lineWidth = 3;
-      mainContext.strokeStyle = "rgba(255, 255, 77," + stara +")";
+      mainContext.strokeStyle = "rgba(255, 255, 77," + a +")";
       mainContext.stroke();
-    
-    
-  
-}
-
-function drawPlanets(planetx, planety, color, pradius)
-{
-    mainContext.beginPath();
-    mainContext.arc(planetx, planety, pradius, 0, Math.PI * 2, false);
-    mainContext.closePath();
-    mainContext.fillStyle = color;
-    mainContext.fill();
-    
     
 }
 
@@ -128,35 +114,29 @@ function drawPlanets(planetx, planety, color, pradius)
 var xPos = 00;
 var yPos = 70;
 var move=5;
-var starLight = Math.random() * 0.1;
 var radius = 40;
-var a=0;
 function moon()
 {
     //declares previous functions
     sky();
     earth();
-
-    drawStars(130, 60, a + 0.2);
-    drawStars(210, 70, a + 0.4);
-    drawStars(290, 50, a + 0.1);
-    drawStars(370, 60, a + 0.25);
-    drawStars(60, 130, a + 0.3);
-    drawStars(70, 210, a);
-    drawStars(50, 290, a+ 0.5);
-    drawStars(60, 370, a);
-    drawStars(150, 400, a+ 0.15);
-    drawStars(120, 340, a + 0.15);
-    drawStars(350, 100, a + 0.25);
-    drawStars(400, 200, a+0.3);
-    drawStars(350, 290, a + 0.4);
-    drawStars(380, 330, a+ 0.35);
-    drawStars(240, 400, a + 0.3);
-    drawStars(350, 420, a);
-    drawPlanets(50,50, "#ff4d4d" , 20 );
-    drawPlanets(400,70, "#4db8ff" , 10 );
-    drawPlanets(200,400, "#ff6600" , 30 );
-    drawStars(100,100,a);    
+    drawStars(50, 50, 0.2);
+    drawStars(130, 60, 0.5);
+    drawStars(210, 70, 0.7);
+    drawStars(290, 50, 0.4);
+    drawStars(370, 60, 0.3);
+    drawStars(60, 130, 0.5);
+    drawStars(70, 210, 0.65);
+    drawStars(50, 290, 0.8);
+    drawStars(60, 370, 0.3);
+    drawStars(150, 400, 0.45);
+    drawStars(120, 340, 0.55);
+    drawStars(350, 100, 0.6);
+    drawStars(400, 200, 0.75);
+    drawStars(350, 290, 0.6);
+    drawStars(380, 330, 0.4);
+    drawStars(240, 400, 0.3);
+    drawStars(350, 420, 0.25);
     
     //creates moon
     mainContext.beginPath();
@@ -205,20 +185,7 @@ function moon()
       radius = 40;
 
       move = 5;
-    } 
-    
-    a += starLight;
-    if(a > 1.0)
-    {
-        starLight = -0.1 + Math.random()*0.005;
-        
-    }
-    if(a< 0)
-    {
-        starLight = 0.005;
-        
-    }
-    
+    }  
       
     requestAnimationFrame(moon);    
 }
