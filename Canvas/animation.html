@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+<title>Simple Canvas Example</title>
+<style>
+canvas {
+    border: 10px #333 solid;
+}
+</style>
+</head>
+ 
+<body>
+<div id="container">
+    <canvas id="myCanvas" height="450" width="450"></canvas>
+</div>
+
+<script>
+
+var myCanvas = document.querySelector("#myCanvas");
+var mainContext = myCanvas.getContext("2d");
+
+
+
+
+
+
+function sky()
+{
+    
+    mainContext.fillStyle = "#2d2d86";
+    mainContext.fillRect(0, 0, myCanvas.width, myCanvas.height);
+    
+}
+
+function earth()
+{
+    //creates blue circle  
+    mainContext.beginPath();
+    mainContext.arc(230, 220, 100, 0, Math.PI * 2, false);
+    mainContext.closePath();
+    mainContext.fillStyle = "#0080ff";
+    mainContext.fill();    
+    
+    //creates green areas
+    mainContext.beginPath();
+    mainContext.moveTo(250, 170);
+    mainContext.bezierCurveTo(250, 170, 150, 220, 300, 240);
+    mainContext.bezierCurveTo(330, 240, 320, 170, 300, 170);
+    mainContext.bezierCurveTo(300, 170, 280, 150, 250, 170);
+    mainContext.closePath();
+    
+    //colors green
+    mainContext.lineWidth = 10;
+    mainContext.strokeStyle = "green";
+    mainContext.fillStyle = "green";
+    mainContext.stroke();
+    mainContext.fill();    
+    
+    mainContext.beginPath();
+    mainContext.moveTo(230, 315);
+    mainContext.bezierCurveTo(230,315, 155, 320, 140, 250);
+    mainContext.bezierCurveTo(140,250, 190, 215, 230, 315);
+    mainContext.closePath();
+    
+    //colors green
+    mainContext.lineWidth = 10;
+    mainContext.strokeStyle = "green";
+    mainContext.fillStyle = "green";
+    mainContext.stroke();
+    mainContext.fill();
+}
+ 
+function drawStars(starx, stary, stara) {
+  
+      //creates lines that shape stars
+
+      mainContext.beginPath();
+      mainContext.moveTo(starx + 15, stary); //75, 45
+      mainContext.lineTo(starx - 15, stary);
+      mainContext.closePath();
+      mainContext.lineWidth = 3;
+      mainContext.strokeStyle ="rgba(255, 255, 77," + stara +")";
+      mainContext.stroke();       
+      
+      mainContext.beginPath();
+      mainContext.moveTo(starx, stary-15);
+      mainContext.lineTo(starx, stary+15);
+      mainContext.closePath();      
+      mainContext.lineWidth = 3;
+      mainContext.strokeStyle = "rgba(255, 255, 77," +stara +")";
+      mainContext.stroke();    
+      
+      mainContext.beginPath();
+      mainContext.moveTo(starx+10, stary-10);
+      mainContext.lineTo(starx-10, stary+10);
+      mainContext.closePath();      
+      mainContext.lineWidth = 3;
+      mainContext.strokeStyle = "rgba(255, 255, 77, " +stara +")";
+      mainContext.stroke(); 
+      
+      mainContext.beginPath();
+      mainContext.moveTo(starx-10, stary-10);
+      mainContext.lineTo(starx+10, stary+10);
+      mainContext.closePath();      
+      mainContext.lineWidth = 3;
+      mainContext.strokeStyle = "rgba(255, 255, 77," + stara +")";
+      mainContext.stroke();
+    
+    
+  
+}
+
+function drawPlanets(planetx, planety, color, pradius)
+{
+    mainContext.beginPath();
+    mainContext.arc(planetx, planety, pradius, 0, Math.PI * 2, false);
+    mainContext.closePath();
+    mainContext.fillStyle = color;
+    mainContext.fill();
+    
+    
+}
+
+
+
+//variables used for moon
+var xPos = 00;
+var yPos = 70;
+var move=5;
+var starLight = Math.random() * 0.1;
+var radius = 40;
+var a=0;
+function moon()
+{
+    //declares previous functions
+    sky();
+    earth();
+
+    drawStars(130, 60, a + 0.2);
+    drawStars(210, 70, a + 0.4);
+    drawStars(290, 50, a + 0.1);
+    drawStars(370, 60, a + 0.25);
+    drawStars(60, 130, a + 0.3);
+    drawStars(70, 210, a);
+    drawStars(50, 290, a+ 0.5);
+    drawStars(60, 370, a);
+    drawStars(150, 400, a+ 0.15);
+    drawStars(120, 340, a + 0.15);
+    drawStars(350, 100, a + 0.25);
+    drawStars(400, 200, a+0.3);
+    drawStars(350, 290, a + 0.4);
+    drawStars(380, 330, a+ 0.35);
+    drawStars(240, 400, a + 0.3);
+    drawStars(350, 420, a);
+    drawPlanets(50,50, "#ff4d4d" , 20 );
+    drawPlanets(400,70, "#4db8ff" , 10 );
+    drawPlanets(200,400, "#ff6600" , 30 );
+    drawStars(100,100,a);    
+    
+    //creates moon
+    mainContext.beginPath();
+    mainContext.arc(xPos, yPos, radius, 0, Math.PI * 2, false);
+    mainContext.closePath();
+    mainContext.fillStyle = "#ffffcc";
+    mainContext.fill();
+    
+    //creates three craters on the moon
+    mainContext.beginPath();
+    mainContext.arc((0.6 * radius) + xPos  , yPos, radius*0.2, 0, Math.PI * 2, false);
+    mainContext.closePath();
+    mainContext.fillStyle = "#666666";
+    mainContext.fill();  
+    
+    mainContext.beginPath();
+    mainContext.arc(xPos, -(0.5 * radius) + yPos, radius*0.2, 0, Math.PI * 2, false);
+    mainContext.closePath();
+    mainContext.fillStyle = "#666666";
+    mainContext.fill();  
+    
+    mainContext.beginPath();
+    mainContext.arc(-(0.3 * radius) + xPos  , (0.3 * radius) + yPos , radius*0.25, 0, Math.PI * 2, false);
+    mainContext.closePath();
+    mainContext.fillStyle = "#666666";
+    mainContext.fill(); 
+    
+   
+   //moves moon across the screen
+    xPos += move;
+   
+    if (xPos > 500) {
+      xPos = 500; 
+      
+      yPos=350;
+      
+      radius = 80;
+      
+      move = -5;
+    }
+    
+    if (xPos < -300) {
+      
+      yPos=70;
+      
+      radius = 40;
+
+      move = 5;
+    } 
+    
+    a += starLight;
+    if(a > 1.0)
+    {
+        starLight = -0.1 + Math.random()*0.005;
+        
+    }
+    if(a< 0)
+    {
+        starLight = 0.005;
+        
+    }
+    
+      
+    requestAnimationFrame(moon);    
+}
+
+moon();
+
+</script>
+
+</body>
+</html>
