@@ -45,12 +45,8 @@
     var a= 66;
     var b=240;
     var c=190;
-    var Image;
    
-  window.onload = function() {
-    var img = document.getElementById('space-background-with-starfield-free-download.jpg');
-    ctx.drawImage(img, 480, 320);
-};
+
    
    for(var c=0; c<brickColumnCount; c++) {
         bricks[c] = [];
@@ -94,10 +90,10 @@
                         dy = -dy;
                         b.status = 0;
                         score++;
-                        a=Math.random()*255;
-                        b=Math.random()*255;
-                        c=Math.random()*255;
-                        ctx.fillText("color: "+a +"," +b +"," +c, canvas.width-65, 20);
+                       // a=Math.random()*255;
+                    //    b=Math.random()*255;
+                      //  c=Math.random()*255;
+                        //ctx.fillText("color: "+a +"," +b +"," +c, canvas.width-65, 20);
                         if(score == brickRowCount*brickColumnCount) {
                             alert("YOU WIN, CONGRATS!");
                             document.location.reload();
@@ -106,7 +102,7 @@
                 }
             }
         }
-    }
+    
     
     function drawBall() {
         ctx.beginPath();
