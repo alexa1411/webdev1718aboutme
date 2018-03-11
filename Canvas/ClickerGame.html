@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Clicker Game</title>
-
-<style>
+    <body>
+        <canvas onclick="myFunction(event)" id="myCanvas" width="500" height="500" ></canvas>
+        <br>
+        <button class="btn btn-info btn-md" onclick="location.reload()">Restart</button>
+    </body>
+    <head>
+      
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <style>
       #myCanvas
       {
         background: url(busycity.JPEG);
@@ -12,143 +20,99 @@
         display: inline-block;
 
       }
-      
-        button {
-                background-color: #4CAF50; 
-                border: none; 
-                color: white;
-                padding: 15px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                margin: 4px 2px;
-                cursor: pointer;
+      </style>
+
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            var score=0;
+            var lives=4;
+            var randx=Math.random()*450;
+            var randy=Math.random()*450;
+            var imageObj = new Image();
+            var startScreen = new Image();
             
-            }      
-</style>
-</head>
-<body>
-    
-    
-    
-<div id="container">
-    <canvas id="myCanvas" height="500" width="500"></canvas>
-</div>
+            startScreen.onload = function()
+            {
+                ctx.drawImage(startScreen, 0, 0);
+                
+            };
+            
+            startScreen.src = 'startScreen.jpg';
 
-<script>
+            
+            
 
-    var myCanvas = document.querySelector("#myCanvas");
-    var mainContext = myCanvas.getContext("2d");
-    var ballx  = 100;
-    var bally = 100;
-    var speedy = -1;
-    var aPressed = false;
-    var spacePressed = false
-    var buttonText = "Find Waldo!"
-    var count = 0;
-    var waldox = Math.random()*500;
-    var waldoy = Math.random()*500;
-    
-    var imageObj = new Image();
-    
-    function drawWaldo(posx, posy)
-    {
-        imageObj.onload = function() 
-        {
-            mainContext.drawImage(imageObj, posx, posy);
-        };
-        
-        imageObj.src = 'waldo.png';
-    }
-    
-    
+            imageObj.onload = function() 
+            {
+                ctx.drawImage(imageObj, randx, randy);
+            };            
 
-        
-    function welcomeText() {
-        
-        mainContext.fillStyle = "#4CAF50";
-        mainContext.fillRect(0, 0, 500, 70);
-        
-        mainContext.font = "20px Arial";
-        mainContext.fillStyle = "black";
-        mainContext.fillText("Where's Waldo? Find him 10 times to win! ", 50, 50);
+                       
 
-    }
-    
-    function count()
-    {
-        mainContext.fillStyle = "#4CAF50";
-        mainContext.fillRect(0, 0, 500,70);        
-        
-       /* mainContext.font = "16px Arial";
-        mainContext.fillStyle = "black";
-        mainContext.fillText("Count: "+count, 50, 50);  */      
-        
-    }
-    
-    function play()
-    {
-        
-          
-        mainContext.clearRect(0, 0, myCanvas.width, myCanvas.height);
-        imageObj.src = 'waldo.png';
-        
-        mainContext.fillStyle = "#4CAF50";
-        mainContext.fillRect(0, 0, 120,50);
-        
-        mainContext.font = "16px Arial";
-        mainContext.fillStyle = "black";
-        mainContext.fillText("Count: "+count, 30, 30);   
-        
+            
+                        
 
-
-    }
-    
-    function welcomeScreen()
-    {
-       mainContext.clearRect(0, 0, myCanvas.width, myCanvas.height);
-       welcomeText();
-    }
-    
-    function changeScore(event) 
-    {
-        var mousex = event.clientX;
-        var mousey = event.clientY;
-        
-        imageObj.onload = function() 
-        {
-            mainContext.drawImage(imageObj, waldox, waldoy);
-        };
-        
-        imageObj.src = 'waldo.png';
-        
-        mainContext.fillStyle = "#4CAF50";
-        mainContext.fillRect(0, 0, 120,50);
-        
-        mainContext.font = "16px Arial";
-        mainContext.fillStyle = "black";
-        mainContext.fillText("Count: "+count, 30, 30);         
-        
-
-        if(mousex> waldox-100 && 
-        mousex<waldox+100 && 
-        mousey > waldoy-100 && 
-        mousey < waldoy+100)
-        {
-            waldox  = Math.random()*500;
-            waldoy  = Math.random()*500;
-        }        
-
-    }
-    
-
-    
- 
-changeScore();
-
-
-</script>
-
-</body>
+            function myFunction(event){
+                var xpos=event.clientX;
+                var ypos=event.clientY;
+                var timer = 15;
+               
+                
+                
+                ctx.textAlign="center";
+                ctx.font="30px Arial";
+                ctx.fillText("Score: "+score, 430, 30);
+                imageObj.src = 'waldo.png';
+                
+                ctx.textAlign="center";
+                ctx.font="30px Arial";
+                ctx.fillText("Lives: "+timer, 100, 30);                
+               
+                if (xpos>=randx && xpos<=randx+50 && ypos>=randy && ypos<=randy+50){
+                    ctx.clearRect(0, 0, 500, 500);
+                    score++;
+                    if(score == 10)
+                    {
+                      alert("You win! Click to play again");
+                      ctx.clearRect(0, 0, canvas.width, canvas.height);
+                      score = 0;
+                    }
+                    
+                    
+                    ctx.fillText("Score: "+score, 430, 30);
+                    ctx.fillText("lives: "+lives, 100, 30); 
+                    randx=Math.random()*450;
+                    randy=Math.random()*450;
+                    imageObj.src = 'waldo.png';
+                    
+                }else {
+                    ctx.clearRect(0, 0, 500, 500);
+                    lives--;
+                    ctx.fillText("Score: "+score, 430, 30);
+                    ctx.fillText("Lives: "+lives, 100, 30); 
+                    //ctx.fillText("Lives: "+lives, 60, 30);
+                    randx=Math.random()*450;
+                    randy=Math.random()*450;
+                    imageObj.src = 'waldo.png';
+                    if (lives==0){
+                        alert("Game Over");
+                        location.reload();
+                    }
+                }
+                if (score==20 && lives==3){
+                    alert("Perfect Game!");
+                    location.reload();
+                } else if (score==20){
+                    alert("You Won!");
+                    location.reload();
+                }
+                timer--;
+                ctx.requestAnimationFrame(myFunction);
+            }
+            
+     
+            
+        </script>
+    </head>
 </html>
