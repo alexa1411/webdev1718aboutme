@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Clicker Game</title>
+
+<style>
+      #myCanvas
+      {
+        background: url(busycity.JPEG);
+
+        margin: 0 auto;
+        display: inline-block;
+
+      }
+      
+        button {
+                background-color: #4CAF50; 
+                border: none; 
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            
+            }      
+</style>
+</head>
+<body>
+    
+    
+    
+<div id="container">
+    <canvas id="myCanvas" height="500" width="500"></canvas>
+</div>
+
+<script>
+
+    var myCanvas = document.querySelector("#myCanvas");
+    var mainContext = myCanvas.getContext("2d");
+    var ballx  = 100;
+    var bally = 100;
+    var speedy = -1;
+    var aPressed = false;
+    var spacePressed = false
+    var buttonText = "Find Waldo!"
+    var count = 0;
+    var waldox = Math.random()*500;
+    var waldoy = Math.random()*500;
+    
+    var imageObj = new Image();
+    
+    function drawWaldo(posx, posy)
+    {
+        imageObj.onload = function() 
+        {
+            mainContext.drawImage(imageObj, posx, posy);
+        };
+        
+        imageObj.src = 'waldo.png';
+    }
+    
+    
+
+        
+    function welcomeText() {
+        
+        mainContext.fillStyle = "#4CAF50";
+        mainContext.fillRect(0, 0, 500, 70);
+        
+        mainContext.font = "20px Arial";
+        mainContext.fillStyle = "black";
+        mainContext.fillText("Where's Waldo? Find him 10 times to win! ", 50, 50);
+
+    }
+    
+    function count()
+    {
+        mainContext.fillStyle = "#4CAF50";
+        mainContext.fillRect(0, 0, 500,70);        
+        
+       /* mainContext.font = "16px Arial";
+        mainContext.fillStyle = "black";
+        mainContext.fillText("Count: "+count, 50, 50);  */      
+        
+    }
+    
+    function play()
+    {
+        
+          
+        mainContext.clearRect(0, 0, myCanvas.width, myCanvas.height);
+        imageObj.src = 'waldo.png';
+        
+        mainContext.fillStyle = "#4CAF50";
+        mainContext.fillRect(0, 0, 120,50);
+        
+        mainContext.font = "16px Arial";
+        mainContext.fillStyle = "black";
+        mainContext.fillText("Count: "+count, 30, 30);   
+        
+
+
+    }
+    
+    function welcomeScreen()
+    {
+       mainContext.clearRect(0, 0, myCanvas.width, myCanvas.height);
+       welcomeText();
+    }
+    
+    function changeScore(event) 
+    {
+        var mousex = event.clientX;
+        var mousey = event.clientY;
+        
+        imageObj.onload = function() 
+        {
+            mainContext.drawImage(imageObj, waldox, waldoy);
+        };
+        
+        imageObj.src = 'waldo.png';
+        
+        mainContext.fillStyle = "#4CAF50";
+        mainContext.fillRect(0, 0, 120,50);
+        
+        mainContext.font = "16px Arial";
+        mainContext.fillStyle = "black";
+        mainContext.fillText("Count: "+count, 30, 30);         
+        
+
+        if(mousex> waldox-100 && 
+        mousex<waldox+100 && 
+        mousey > waldoy-100 && 
+        mousey < waldoy+100)
+        {
+            waldox  = Math.random()*500;
+            waldoy  = Math.random()*500;
+        }        
+
+    }
+    
+
+    
+ 
+changeScore();
+
+
+</script>
+
+</body>
+</html>
