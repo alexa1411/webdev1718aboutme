@@ -58,12 +58,12 @@
                 var ypos=event.clientY;
                 var timer = 15;
                
-                
+                imageObj.src = 'waldo.png';
                 
                 ctx.textAlign="center";
                 ctx.font="30px Arial";
                 ctx.fillText("Score: "+score, 430, 30);
-                imageObj.src = 'waldo.png';
+                
                 
                 ctx.textAlign="center";
                 ctx.font="30px Arial";
@@ -77,6 +77,7 @@
                       alert("You win! Click to play again");
                       ctx.clearRect(0, 0, canvas.width, canvas.height);
                       score = 0;
+                      lives =3;
                     }
                     
                     
@@ -86,7 +87,9 @@
                     randy=Math.random()*450;
                     imageObj.src = 'waldo.png';
                     
-                }else {
+                }
+                else 
+                {
                     ctx.clearRect(0, 0, 500, 500);
                     lives--;
                     ctx.fillText("Score: "+score, 430, 30);
@@ -100,14 +103,8 @@
                         location.reload();
                     }
                 }
-                if (score==20 && lives==3){
-                    alert("Perfect Game!");
-                    location.reload();
-                } else if (score==20){
-                    alert("You Won!");
-                    location.reload();
-                }
-                timer--;
+ 
+             
                 ctx.requestAnimationFrame(myFunction);
             }
             

@@ -1,72 +1,51 @@
 
-<DOCTYPE html>
+<!DOCTYPE html>
 
     <html>
         
     <style>
         body{background-color:pink;}
-        p, h1 {font-family: helvetica;}
-        p {font-size: 1.2em;line-height:1.5em; margin-left: 24px; }
-        pre {font-size: 2em;}
-        div { border: 5px solid black; margin: 4px; border-radius: 5px; background-color: #ededed; margin: 20px 20px 20px 20px; }
-        button {
-                background-color: #4CAF50; 
-                border: none; 
-                color: white;
-                padding: 15px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                margin: 4px 2px;
-                cursor: pointer;
-            
-            }
-        h2
-        {
-            color:darkblue;
-        
-        }
+     
     </style>        
-    
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-        </script>
-            <script>
-            $(document).ready(function() 
-            {
-                    $.ajax
-                    ({
-                        url: "https://data.cityofchicago.org/resource/psqp-6rmg.json",
-                        success: function(result) 
-                        {
-                            console.log(result);
-                            var output = "";
-                            
-                            $.each(result, function(index, value)
-                            {
-                                
-                                $("#results").append('<div><h1 class = "style">' + value.name_ + '</h1>' +
-                                    '<p class = "style"><h2>Hours of Operation:</h2> " + value.hours_of_operation + '<br>'' +
-                                    '<h2>Location:</h2> " + value.address + 
-                                    
-                                    '</p>" +
-                                    '</div>'); 
-                            
-                            });
-                        }
-                    })
-                
-            });
-        </script>
-    </head>
 
     <body>
-        <div id="div1">
-            <h1 style="text-align:center">Title</h1>
-        </div>
+    <script>
+/*
+function getResults(zip) {
+    // or
+    // function getResults(lat, lng) {
+    $.ajax({
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+        // submit a get request to the restful service zipSearch or locSearch.
+        url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip,
+        // or
+        // url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/locSearch?lat=" + lat + "&lng=" + lng,
+        dataType: 'jsonp',
+        jsonpCallback: 'searchResultsHandler'
+    });
+}
+//iterate through the JSON result object.
+function searchResultsHandler(searchResults) {
+    for (var key in searchresults) {
+        alert(key);
+        var results = searchresults[key];
+        for (var i = 0; i < results.length; i++) {
+            var result = results[i];
+            for (var key in result) {
+                //only do an alert on the first search result
+                if (i == 0) {
+                    alert(result[key]);
+                }
+            }
+        }
+    }
+}
 
-        <div id="results"></div>
+
+*/
+console.log("hello");
+</script>
+
     </body>
     </html>
-<script src="/_static/preview/livecss.js"></script>
