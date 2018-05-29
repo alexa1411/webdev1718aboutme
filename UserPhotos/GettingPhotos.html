@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+  
+    <head>
+        <title>Photos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="https://fonts.googleapis.com/css?family=Pattaya" rel="stylesheet">  
+    </head>
+    
+    <style>
+      .title{
+        font-family: 'Pattaya', sans-serif;
+        color:green;
+        padding-top:0px;
+        text-align:center;
+      }
+      
+      .upload{
+        text-align:left;
+      }
+    </style>
+    
+    <body >
+      
+      
+      <!--<div>
+      style="background-color:#c9eadc"
+        <p class ="title" style="font-size:50px ">Photo Capture</p>
+        <p class ="title upload" style="font-size:30px">Upload a photo</p>
+        <p class ="title upload" style="font-size:30px"> Take a photo</p>
+      </div>
+      -->
+      
+      <input type="file" accept="image/*" id="file-input" onchange="loadImage()" > <!--onchange="drawPic()"-->
+      
+      <canvas id="canvas" width=500 height=500></canvas>
+
+      <script>
+        const fileInput = document.getElementById('file-input');
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');
+        
+        
+        var myImage = new Image();
+        myImage.src = fileInput;
+        myImage.addEventListener("load", loadImage, false);
+        
+        function loadImage(e) {
+          context.drawImage(myImage, 0, 0);
+        }
+        
+
+      
+      </script>
+  
+                
+    </body>
+</html>
