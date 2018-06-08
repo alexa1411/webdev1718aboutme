@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+  <!-- https://www.sitepoint.com/using-device-orientation-html5/-->
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
   </head>
@@ -13,21 +15,34 @@
     
   }
   
+  #map {
+    height: 400px;  /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
+   }
+  
   </style>
   <body>
   
     <p class="heading w3-xxxlarge">Alexa Lagunas</p>
     
     <center><video id="player" controls autoplay></video></center>
+    <button id="goFS">Go Fullscreen</button>
     <center><button id="capture">Capture</button></center>
     <center><canvas id="canvas" width=320 height=240></canvas></center>
+    
+ 
 
     <script>
       const player = document.getElementById('player');
       const canvas = document.getElementById('canvas');
       const context = canvas.getContext('2d');
       const captureButton = document.getElementById('capture');
-      
+
+      var goFS = document.getElementById("goFS");
+      goFS.addEventListener("click", function() {
+          var videoElement = document.getElementById("player");
+          videoElement.requestFullscreen();
+      }, false);
     
       const constraints = {
         video: true,
@@ -45,5 +60,86 @@
           player.srcObject = stream;
         });
     </script>
+    
+        <p id="demo"></p>
+        <p id="startLat"></p>
+        <p id="startLon"></p>
+        <p id="error"></p>
+        <button onClick = "getLocation()">location</button>
+        
+        <div id="map"></div>
+        
+        <script>
+            // check for Geolocation support
+            var startPos;
+          
+            if (navigator.geolocation) {
+              document.getElementById("demo").innerHTML ='Geolocation is supported!';
+            }
+            else {
+              document.getElementById("demo").innerHTML ='Geolocation is not supported for this Browser/OS.';
+            }
+            
+            window.onload = function() {
+              //var startPos;
+             
+              var geoOptions = {
+                maximumAge: 5 * 60 * 1000,
+              };
+              var geoError = function(error) {
+                  document.getElementById('startLat').innerHTML ='Error occurred. Error code: ' + error.code;
+                  // error.code can be:
+                  //   0: unknown error
+                  //   1: permission denied
+                  //   2: position unavailable (error response from location provider)
+                  //   3: timed out
+                };
+                navigator.geolocation.getCurrentPosition( geoError, geoOptions);
+            };
+            </script>
+            
+            
+
+            <script>
+            
+            var x = document.getElementById("demo");
+            var map;
+            
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else { 
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+                
+            }
+            
+            function showPosition(position) {
+                x.innerHTML = "Latitude: " + position.coords.latitude + 
+                "<br>Longitude: " + position.coords.longitude;
+                
+                
+                map = new google.maps.Map(document.getElementById('map'), {
+                  center: {lat: position.coords.latitude, lng: position.coords.longitude},
+                  zoom: 8
+                });
+                
+                var marker = new google.maps.Marker({position:{lat: position.coords.latitude,lng: position.coords.longitude}, map: map});
+            }
+            
+            
+
+            </script>
+            
+            <a href="ClickToCall.html" class="w3-bar-item w3-button">CLICK TO CALL</a>
+            
+
+            
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD63AohysB6WO1acMQqvRR7xcS_8K6U5B8&callback=initMap">
+            </script> 
+
+           
+
   </body>
 </html>

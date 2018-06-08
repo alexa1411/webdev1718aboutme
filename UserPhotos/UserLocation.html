@@ -1,0 +1,46 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+        <meta charset=utf-8 />
+    </head>
+    <body>
+    
+        <p id="demo"></p>
+        <p id="startLat"></p>
+        <p id="startLon"></p>
+        <p id="error"></p>
+        <script>
+            // check for Geolocation support
+            if (navigator.geolocation) {
+              document.getElementById("demo").innerHTML ='Geolocation is supported!';
+            }
+            else {
+              document.getElementById("demo").innerHTML ='Geolocation is not supported for this Browser/OS.';
+            }
+            
+            window.onload = function() {
+              var startPos;
+              var geoOptions = {
+                maximumAge: 5 * 60 * 1000,
+              }
+              var geoSuccess = function(position) {
+                startPos = position;
+                document.getElementById('startLat').innerHTML = startPos.coords.latitude;
+                document.getElementById('startLon').innerHTML = startPos.coords.longitude;
+              };
+                var geoError = function(error) {
+                  document.getElementById('startLat').innerHTML ='Error occurred. Error code: ' + error.code;
+                  // error.code can be:
+                  //   0: unknown error
+                  //   1: permission denied
+                  //   2: position unavailable (error response from location provider)
+                  //   3: timed out
+                };
+                navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
+            };
+        </script>
+    </body>
+</html>
