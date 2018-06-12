@@ -7,7 +7,10 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     
     <style>
@@ -28,14 +31,37 @@
         background-size: 75px, 50px;
         }
         
+        
     </style>
-    <body>
-        <p class= "heading w3-xxxlarge">Click To Call</p>
-        <p class= "calls w3-xlarge">Feeling Hungry?</p>
-        <img class="img-responsive img-rounded" src="pizzahut.jpeg" width="200" height="200" style="padding:20px;" onclick="document.getElementById('pizzaHut').style.display='block'" class="w3-button " >    
-        <img class="img-responsive img-rounded" src="chipotle.jpeg" width="200" height="200" style="padding:20px;" onClick="alert('Hello world!')">
-        <img class="img-responsive img-rounded" src="jimmyjohns.jpeg" width="200" height="200" style="padding:20px;" onClick="alert('Hello world!')">    
-        <img class="img-responsive img-rounded" src="dominos.png" width="200" height="200" style="padding:20px;" onClick="alert('Hello world!')">    
+    <body style="background-color:#f25c5c;">
+        <p class= "heading w3-xxxlarge" style="color:white;">Click To Call</p>
+        
+        <div class="container">
+          <p class= "calls w3-xlarge " style="padding:15px; color:white;">Feeling Hungry?</p>
+          <div class="row">
+            <div class="col-sm-6" >
+        <img class="img-responsive img-rounded" src="pizzahut.jpeg" width="200" height="200" style="padding:20px; cursor:pointer;" onclick="document.getElementById('pizzaHut').style.display='block'" class="w3-button " >    
+
+            </div>
+            <div class="col-sm-6">   
+        <img class="img-responsive img-rounded" src="chipotle.jpeg" width="200" height="200" style="padding:20px; cursor:pointer;" onclick="document.getElementById('chipotle').style.display='block'" class="w3-button " >
+            </div>
+          </div>
+        </div>
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6" >
+        <img class="img-responsive img-rounded" src="jimmyjohns.jpeg" width="200" height="200" style="padding:20px; cursor:pointer;" onclick="document.getElementById('JimmyJohns').style.display='block'" class="w3-button " >    
+
+            </div>
+            <div class="col-sm-6">   
+        <img class="img-responsive img-rounded" src="dominos.png" width="200" height="200" style="padding:20px; cursor:pointer;" onclick="document.getElementById('Dominos').style.display='block'" class="w3-button " >    
+            </div>
+          </div>
+        </div>
+
+     
 
 
 
@@ -44,20 +70,62 @@
           <div class="w3-container">
             <span onclick="document.getElementById('pizzaHut').style.display='none'" class="w3-button w3-display-topright">&times;</span>
             <p  class="w3-center">
-            <a href="tel:+1-303-499-7111" >Call<i class="fa fa-phone"></i></a>
+            <a href="tel:773-588-8844" >Call<i class="fa fa-phone"></i></a>
             </p>
             <p class="w3-center">
-            <a href="sms:+1-303-499-7111">Message<i class="material-icons">message</i></a>
+            <a href="sms:773-588-8844">Message<i class="material-icons">message</i></a>
+            </p>
+          </div>
+        </div>
+        </div>
+        
+        
+        <div id="chipotle" class="w3-modal w3-large">
+        <div class="w3-modal-content ">
+          <div class="w3-container">
+            <span onclick="document.getElementById('chipotle').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <p  class="w3-center">
+            <a href="tel:773-596-2588" >Call<i class="fa fa-phone"></i></a>
+            </p>
+            <p class="w3-center">
+            <a href="sms:773-596-2588">Message<i class="material-icons">message</i></a>
+            </p>
+          </div>
+        </div>
+        </div>
+        
+        
+        <div id="JimmyJohns" class="w3-modal w3-large">
+        <div class="w3-modal-content ">
+          <div class="w3-container">
+            <span onclick="document.getElementById('JimmyJohns').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <p  class="w3-center">
+            <a href="tel:773-528-5646" >Call<i class="fa fa-phone"></i></a>
+            </p>
+            <p class="w3-center">
+            <a href="sms:773-528-5646">Message<i class="material-icons">message</i></a>
+            </p>
+          </div>
+        </div>
+        </div>
+        
+        <div id="Dominos" class="w3-modal w3-large">
+        <div class="w3-modal-content ">
+          <div class="w3-container">
+            <span onclick="document.getElementById('Dominos').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <p  class="w3-center">
+            <a href="tel:773-276-9800" >Call<i class="fa fa-phone"></i></a>
+            </p>
+            <p class="w3-center">
+            <a href="sms:773-276-9800">Message<i class="material-icons">message</i></a>
             </p>
           </div>
         </div>
         </div>
 
+        <h3><a href="CapturingImage.html" class="w3-bar-item w3-button" style="color:white; font-family: 'Sansita', sans-serif;" 
+        >HOME</a></h3>
 
-        NIST Telephone Time-of-Day Service <a href="tel:+1-303-499-7111">+1 (303) 499-7111</a>
-        <p class= "calls w3-xlarge">Feeling the unexpected urge to jump on a trampoline?</p>
-        
-        
-     
+
     </body>
 </html>

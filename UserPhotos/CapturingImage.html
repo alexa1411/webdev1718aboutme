@@ -21,12 +21,11 @@
    }
   
   </style>
-  <body>
+  <body style="background-color:#f25c5c;">
   
-    <p class="heading w3-xxxlarge">Alexa Lagunas</p>
+    <p class="heading w3-xxxlarge" style="color:white">Alexa Lagunas</p>
     
     <center><video id="player" controls autoplay></video></center>
-    <button id="goFS">Go Fullscreen</button>
     <center><button id="capture">Capture</button></center>
     <center><canvas id="canvas" width=320 height=240></canvas></center>
     
@@ -38,12 +37,6 @@
       const context = canvas.getContext('2d');
       const captureButton = document.getElementById('capture');
 
-      var goFS = document.getElementById("goFS");
-      goFS.addEventListener("click", function() {
-          var videoElement = document.getElementById("player");
-          videoElement.requestFullscreen();
-      }, false);
-    
       const constraints = {
         video: true,
       };
@@ -61,11 +54,12 @@
         });
     </script>
     
-        <p id="demo"></p>
+        <p id="isSupported" class="w3-large" style="color:white; font-family: 'Sansita', sans-serif; padding:15px;"></p>
+        <button onClick = "getLocation()" class="w3-bar-item w3-button" style=background-color:#eae3e3;>location</button>
         <p id="startLat"></p>
         <p id="startLon"></p>
         <p id="error"></p>
-        <button onClick = "getLocation()">location</button>
+        
         
         <div id="map"></div>
         
@@ -74,10 +68,10 @@
             var startPos;
           
             if (navigator.geolocation) {
-              document.getElementById("demo").innerHTML ='Geolocation is supported!';
+              document.getElementById("isSupported").innerHTML ='Geolocation is supported!';
             }
             else {
-              document.getElementById("demo").innerHTML ='Geolocation is not supported for this Browser/OS.';
+              document.getElementById("isSupported").innerHTML ='Geolocation is not supported for this Browser/OS.';
             }
             
             window.onload = function() {
@@ -102,7 +96,7 @@
 
             <script>
             
-            var x = document.getElementById("demo");
+            var x = document.getElementById("isSupported");
             var map;
             
             function getLocation() {
@@ -131,7 +125,7 @@
 
             </script>
             
-            <a href="ClickToCall.html" class="w3-bar-item w3-button">CLICK TO CALL</a>
+            <h3><a href="ClickToCall.html" class="w3-bar-item w3-button" style="color:white; font-family: 'Sansita', sans-serif;" >CLICK TO CALL</a></h3>
             
 
             
